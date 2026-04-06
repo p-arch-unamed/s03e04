@@ -6,6 +6,7 @@
 
 <div id="conteudo" style="display:none;">
   <h1>Mensagem desbloqueada 👀</h1>
+  <img src="img/invincible.jpeg" alt="Imagem" width="300">
   <p>Você chegou até aqui...</p>
 
   <h2 id="contador"></h2>
@@ -16,12 +17,12 @@
 function entrar() {
   const senha = document.getElementById("senha").value;
 
-  if (senha === "segredo123") {
+  if (senha === "100908") {
     document.getElementById("login").style.display = "none";
     document.getElementById("conteudo").style.display = "block";
     iniciarContador();
   } else {
-    alert("Senha errada...");
+    alert("Senha errada... Tente algo mais parecido com uma senha de iPhone.");
   }
 }
 function iniciarContador() {
