@@ -1,0 +1,53 @@
+<div id="login">
+  <h2>Digite a senha</h2>
+  <input type="password" id="senha">
+  <button onclick="entrar()">Entrar</button>
+</div>
+
+<div id="conteudo" style="display:none;">
+  <h1>Mensagem desbloqueada 👀</h1>
+  <p>Você chegou até aqui...</p>
+
+  <h2 id="contador"></h2>
+  <p id="textoTempo"></p>
+</div>
+
+<script>
+function entrar() {
+  const senha = document.getElementById("senha").value;
+
+  if (senha === "segredo123") {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("conteudo").style.display = "block";
+    iniciarContador();
+  } else {
+    alert("Senha errada...");
+  }
+}
+function iniciarContador() {
+  const dataAlvo = new Date("2026-09-10T00:00:00").getTime();
+
+  const intervalo = setInterval(() => {
+    const agora = new Date().getTime();
+    const diff = dataAlvo - agora;
+
+    if (diff <= 0) {
+      clearInterval(intervalo);
+      document.getElementById("contador").innerText = "Chegou o momento ❤️";
+      document.getElementById("textoTempo").innerText = "Atualize a página...";
+      return;
+    }
+
+    const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutos = Math.floor((diff / (1000 * 60)) % 60);
+    const segundos = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("contador").innerText =
+      `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+
+    document.getElementById("textoTempo").innerText =
+      "Faltam esses segundos para a próxima mensagem...";
+  }, 1000);
+}
+</script>
