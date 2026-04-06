@@ -1,14 +1,15 @@
 <div id="login" style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh;">
-  <h2>Digite a senha</h2>
+  <h2>Insert the password</h2>
   <input type="password" id="senha">
-  <button onclick="entrar()">Entrar</button>
+  <button onclick="entrar()">Enter</button>
+  <h6>Hint: (sdrawkcab ni TON si rewsna eht) .(hsilgnE ni) to delevart ev'uoy taht tnenitnoc tsaL</h6>
 </div>
 
-<div id="conteudo" style="display:none; flex-direction:column; align-items:center; justify-content:center; height:100vh;">
-  <h1>Mensagem desbloqueada.</h1>
+<div id="conteudo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh;">
+  <h1>Message unlocked.</h1>
   <img src="img/invincible.jpeg" alt="Imagem" width="300">
-  <p>Você chegou até aqui...</p>
-
+  <p>.it ekil uoy taht wonk I esuaceb gnidnes tsuJ</p>
+  <h6><i>Gift sender: ?</i></h6>
   <h2 id="contador"></h2>
   <p id="textoTempo"></p>
 </div>
@@ -17,12 +18,12 @@
 function entrar() {
   const senha = document.getElementById("senha").value;
 
-  if (senha === "enaaifos") {
+  if (senha == "Europe" || senha == "europe") {
     document.getElementById("login").style.display = "none";
-    document.getElementById("conteudo").style.display = "block";
+    document.getElementById("conteudo").style.display = "flex";
     iniciarContador();
   } else {
-    alert("Senha errada... Tente algo mais parecido com uma senha de iPhone.");
+    alert("Senha errada...");
   }
 }
 function iniciarContador() {
@@ -34,7 +35,7 @@ function iniciarContador() {
 
     if (diff <= 0) {
       clearInterval(intervalo);
-      document.getElementById("contador").innerText = "Chegou o momento ❤️";
+      document.getElementById("contador").innerText = "";
       document.getElementById("textoTempo").innerText = "Atualize a página...";
       return;
     }
@@ -48,7 +49,8 @@ function iniciarContador() {
       `${dias}d ${horas}h ${minutos}m ${segundos}s`;
 
     document.getElementById("textoTempo").innerText =
-      "Faltam esses segundos para a próxima mensagem...";
+      "Tempo até uma possível nova mensagem... (data específica)";
   }, 1000);
 }
 </script>
+
