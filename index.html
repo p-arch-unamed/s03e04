@@ -1,40 +1,272 @@
-<div id="login" style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh;">
-  <h2>Insert the password</h2>
-  <input type="password" id="senha">
-  <button onclick="entrar()">Enter</button>
-  <h6>Hint: (sdrawkcab ni TON si rewsna eht) .(hsilgnE ni) to delevart ev'uoy taht tnenitnoc tsaL</h6>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Message</title>
 
-<div id="conteudo" style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh;">
-  <h2>Unlocked.</h2>
-  <p>.it ekil uoy taht wonk I esuaceb gnidnes tsuJ</p>
-  <h2 id="contador"></h2>
-  <p id="textoTempo"></p>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#18184e;
+  color:#f5f5f5;
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.container{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:30px 20px;
+}
+
+.card{
+  width:100%;
+  max-width:700px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+  border-radius:24px;
+  padding:28px 22px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+  text-align:center;
+}
+
+h2{
+  font-size:28px;
+  margin-bottom:20px;
+  font-weight:700;
+}
+
+.subtitle{
+  font-size:13px;
+  opacity:0.7;
+  margin-top:15px;
+  line-height:1.5;
+}
+
+input{
+  width:100%;
+  max-width:320px;
+  padding:14px 16px;
+  border:none;
+  outline:none;
+  border-radius:14px;
+  margin-top:15px;
+  background:#1a1a22;
+  color:white;
+  font-size:16px;
+  text-align:center;
+}
+
+button{
+  margin-top:18px;
+  width:100%;
+  max-width:320px;
+  padding:14px;
+  border:none;
+  border-radius:14px;
+  background:white;
+  color:black;
+  font-weight:600;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.2s ease;
+}
+
+button:hover{
+  transform:scale(1.02);
+}
+
+#conteudo{
+  display:none;
+}
+
+img{
+  width:100%;
+  max-width:320px;
+  border-radius:18px;
+  margin-bottom:28px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.5);
+}
+
+.texto{
+  text-align:center;
+  line-height:1.9;
+  font-size:16px;
+  color:#e5e5e5;
+}
+
+#contador{
+  margin-top:35px;
+  font-size:30px;
+  font-weight:700;
+}
+
+#textoTempo{
+  margin-top:8px;
+  opacity:0.7;
+}
+
+@media(max-width:480px){
+
+  .card{
+    padding:24px 18px;
+    border-radius:20px;
+  }
+
+  h2{
+    font-size:24px;
+  }
+
+  .texto{
+    font-size:15px;
+    line-height:1.8;
+  }
+
+  #contador{
+    font-size:24px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="card" id="login">
+    <h2>Insert the password</h2>
+
+    <input type="password" id="senha" placeholder="Password">
+
+    <button onclick="entrar()">Enter</button>
+
+    <p class="subtitle">
+      Hint: There are three different passwords that can unlock the content.<br><br>
+      The password only has 6 numbers.<br> So just insert ONLY 6 numbers, doesn't matter which one of the three passwords you choose.<br><br>
+      Each password can unlock the content.<br><br>
+      <b>Hint (Password 1)</b>: 6 numbers (used to be your cellphone's password (I don't know if it still is)).<br><br>
+      <b>Hint (Password 2)</b>: 6 numbers (another one that used to be your cellphone's password but this one is related to me).<br><br>
+      <b>Hint (Password 3)</b>: 6 numbers ((alugriv ro tod tuohtiw) π fo srebmun 6 tsrif)
+      <br>
+      TPGtahc ksa ?thgir it teg ot drah llitS
+      <br><br>
+      Read it alone.
+    </p>
+  </div>
+
+  <div class="card" id="conteudo">
+
+    <img src="img/invincible.jpeg" alt="Invincible">
+
+    <div class="texto">
+
+      <p>
+        Well, I was wondering if I should send you this message...
+        <br>
+        I dont know how your life is going to receive and deal with this...
+        <br><br>
+        But I decided to send it.
+        <br>
+        I really hope everything is going fine with you, that you're studying to achieve your goals (university, work, etc), that you're taking care of yourself, and that you're having a good time from now.
+        <br>
+        <br>
+        I know there are couple months that we haven't talked and I am not really trying to haunt you with this message.
+        <br>
+        But I really miss you, I'm kinda doing great, I'm not living sadly for what happened anymore, I'm really doing great, but honestly I still think about you almost every single day.
+        <br>
+        I see that despite I have almost everything that I wanted (money, career, etc), I still feel like something is missing...
+        <br>
+        Sometimes some cool things happen to me and I just want to share with you, but I can't...
+        <br>
+        Even about watching Invincible, I really wanted to talk about the show with you but I couldn't...
+        <br>
+        <br>
+        These days I was riding one of those motors-bike, I crossed your street, saw the light of your room and even saw your brother playing alone in the parking lot.
+        <br>
+        That made me feel even more missing you.
+        <br>
+        Sometimes in my dreams or even wake up, I hear your voice, calling or recording audios to your friends telling something that happened to you.
+        <br>
+        Maybe it's just my mind trying to trick me, but I really feel like I can hear you sometimes.
+        <br><br>
+        <b>The point is: I do believe that we can be much more than this.</b>
+        <br>
+        But I'm not living counting on that, I'm just living my life.
+        <br>
+        <br>
+        I know that you are probably doing great, you don't necessarily need to answer this.
+        <br>
+        If you don't answer, it's ok. I'll understand the "message" and I won't send anything like this again.
+        <br>
+        I'm not for playing games anymore.
+        <br>
+        I will not be waiting for an answer, but...
+        <br><br>
+
+        - You know who created this.<br>
+        * This website was created and written in english because I don't want someone else in your home to read it.
+        <br><br>
+
+        + This website will be dead after 10th September 2026.
+      </p>
+
+    </div>
+
+    <h2 id="contador"></h2>
+    <p id="textoTempo"></p>
+
+  </div>
+
 </div>
 
 <script>
+
 function entrar() {
+
   const senha = document.getElementById("senha").value;
 
-  if (senha == "Europe" || senha == "europe") {
+  if (senha == "100908" || senha == "161003" || senha == "314159") {
+
     document.getElementById("login").style.display = "none";
-    document.getElementById("conteudo").style.display = "flex";
+    document.getElementById("conteudo").style.display = "block";
+
     iniciarContador();
+
   } else {
-    alert("Senha errada...");
+
+    alert("Wrong password...");
+
   }
 }
+
 function iniciarContador() {
+
   const dataAlvo = new Date("2026-09-10T00:00:00").getTime();
 
   const intervalo = setInterval(() => {
+
     const agora = new Date().getTime();
     const diff = dataAlvo - agora;
 
     if (diff <= 0) {
+
       clearInterval(intervalo);
+
       document.getElementById("contador").innerText = "";
-      document.getElementById("textoTempo").innerText = "Atualize a página...";
+      document.getElementById("textoTempo").innerText = "Refresh the page...";
+
       return;
     }
 
@@ -47,7 +279,12 @@ function iniciarContador() {
       `${dias}d ${horas}h ${minutos}m ${segundos}s`;
 
     document.getElementById("textoTempo").innerText =
-      "Nova mensagem em: ";
+      "Next message will be available in: ";
+
   }, 1000);
 }
+
 </script>
+
+</body>
+</html>
